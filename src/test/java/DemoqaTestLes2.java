@@ -29,7 +29,7 @@ public class DemoqaTestLes2 {
         $("#dateOfBirthInput").click();
         $(".react-datepicker__year-select").selectOption("1980");
         $(".react-datepicker__month-select").selectOption("August");
-        $(".react-datepicker__day react-datepicker__day--001").click();
+        $$(".react-datepicker__day").findBy(text("14")).click();
 
         //Должность
         $("#subjectsInput").setValue("Biology").pressEnter();
@@ -44,12 +44,20 @@ public class DemoqaTestLes2 {
         $("#currentAddress").setValue("Baker Street 1");
 
         //Штат и город
-        $("#react-select-3-input").$(byText("Haryana")).click();
-        $("#react-select-4-input").$(byText("Karnal")).click();
+        $("#react-select-3-input").setValue("Haryana").pressEnter();
+        $("#react-select-4-input").setValue("Karnal").pressEnter();
 
         $("#submit").click();
 
-        $("[id=search]").shouldHave(text("https://selenide.org"));
+        $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Max Jons"));
+        $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Male"));
+        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("1234567890"));
+        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("14 August,1980"));
+        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("Biology"));
+        $(".table-responsive").$(byText("Hobbies")).parent().shouldHave(text("Sports"));
+        $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("2025-04-12_18-09-49.png"));
+        $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Baker Street 1"));
+        $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("Haryana Karnal"));
     }
 }
 
