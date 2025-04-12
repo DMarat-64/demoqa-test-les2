@@ -6,14 +6,14 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class DemoqaTestLes2 {
+public class DemoqaLes2Test {
 
     @BeforeAll
     static void beforeall() {
         Configuration.browserSize = "1920*1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
+
     }
     @Test
     void fillFormTest() {
